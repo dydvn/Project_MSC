@@ -1,39 +1,64 @@
 package com.lemonsheep.project_msc
 
-import androidx.appcompat.app.AppCompatActivity
+import android.R
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import java.util.Timer
-import kotlin.concurrent.timer
-import kotlin.concurrent.timerTask
+import android.view.View
+import android.widget.LinearLayout
+import android.widget.TableLayout
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var sec: Int = 0
-        var IsRun: Boolean = false
-        var timerTask: Timer? = null
+        val tableLayout:TableLayout = findViewById(R.id.tablelayout_name1) as TableLayout
 
-        val tv: TextView = findViewById(R.id.txt_test) as TextView
-        val btn_todolist: Button = findViewById(R.id.btn_to_do_list) as Button
 
-        btn_todolist.setOnClickListener {
 
-            IsRun = !IsRun
 
-            if (IsRun) {
-                timerTask = kotlin.concurrent.timer(period = 1000) {
-                    sec++
-                    runOnUiThread {
-                        tv.text = sec.toString()
-                    }
-                }
-            } else {
-                timerTask?.cancel()
-            }
-        }
+
+
+
+
+//        var sec: Int = 0
+//        var isRun: Boolean = false
+//        var timerTask: Timer? = null
+//
+//        val tv: TextView = findViewById(R.id.txt_test) as TextView
+//        val btn_todolist: Button = findViewById(R.id.btn_to_do_list) as Button
+//
+//        fun GetRandomValueFloat(min :Int, max:Int):Float {
+//            if(min > max)
+//                return 0.toFloat()
+//
+//            return ((min * 100 + Random().nextInt((max - min) * 100)) * 0.01).toFloat()
+//        }
+//
+//        btn_todolist.setOnClickListener{
+//            val random_box = Random()
+//            val num = random_box.nextFloat()
+//
+//            tv.text = GetRandomValueFloat(0, 1).toString()
+//        }
+
+
+
+//        btn_todolist.setOnClickListener {
+//
+//            isRun = !isRun
+//
+//            if (isRun) {
+//                timerTask = kotlin.concurrent.timer(period = 10) {
+//                    sec++
+//                    runOnUiThread {
+//                        tv.text = (sec.toFloat() / 100).toString()
+//                    }
+//                }
+//            } else {
+//                timerTask?.cancel()
+//            }
+//        }
     }
 }
